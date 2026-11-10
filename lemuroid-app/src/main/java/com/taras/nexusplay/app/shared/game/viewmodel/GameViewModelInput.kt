@@ -8,6 +8,11 @@ import android.view.MotionEvent
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
+import com.swordfish.libretrodroid.Controller
+import com.swordfish.libretrodroid.GLRetroView
+import com.swordfish.libretrodroid.GLRetroView.Companion.MOTION_SOURCE_ANALOG_LEFT
+import com.swordfish.libretrodroid.GLRetroView.Companion.MOTION_SOURCE_ANALOG_RIGHT
+import com.swordfish.libretrodroid.GLRetroView.Companion.MOTION_SOURCE_DPAD
 import com.taras.nexusplay.R
 import com.taras.nexusplay.app.shared.input.InputDeviceManager
 import com.taras.nexusplay.app.shared.input.InputKey
@@ -24,11 +29,6 @@ import com.taras.nexusplay.common.kotlin.zipOnKeys
 import com.taras.nexusplay.lib.controller.ControllerConfig
 import com.taras.nexusplay.lib.library.GameSystem
 import com.taras.nexusplay.lib.library.SystemCoreConfig
-import com.swordfish.libretrodroid.Controller
-import com.swordfish.libretrodroid.GLRetroView
-import com.swordfish.libretrodroid.GLRetroView.Companion.MOTION_SOURCE_ANALOG_LEFT
-import com.swordfish.libretrodroid.GLRetroView.Companion.MOTION_SOURCE_ANALOG_RIGHT
-import com.swordfish.libretrodroid.GLRetroView.Companion.MOTION_SOURCE_DPAD
 import com.taras.nexusplay.touchinput.radial.sensors.TiltConfiguration
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow

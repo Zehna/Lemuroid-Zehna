@@ -1,7 +1,7 @@
 package com.taras.nexusplay.app.shared.coreoptions
 
-import com.taras.nexusplay.lib.core.CoreVariable
 import com.swordfish.libretrodroid.Variable
+import com.taras.nexusplay.lib.core.CoreVariable
 import java.io.Serializable
 
 data class CoreOption(

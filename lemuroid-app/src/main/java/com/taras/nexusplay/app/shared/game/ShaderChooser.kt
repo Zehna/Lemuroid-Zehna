@@ -1,11 +1,11 @@
 package com.taras.nexusplay.app.shared.game
 
 import android.content.Context
+import com.swordfish.libretrodroid.ShaderConfig
 import com.taras.nexusplay.app.shared.settings.HDModeQuality
 import com.taras.nexusplay.app.utils.android.getGLSLVersion
 import com.taras.nexusplay.lib.library.GameSystem
 import com.taras.nexusplay.lib.library.SystemID
-import com.swordfish.libretrodroid.ShaderConfig
 import timber.log.Timber
 
 object ShaderChooser {

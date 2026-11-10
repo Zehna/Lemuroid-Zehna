@@ -1,6 +1,7 @@
 package com.taras.nexusplay.app.shared.game.viewmodel
 
 import android.content.Context
+import com.swordfish.libretrodroid.GLRetroView
 import com.taras.nexusplay.R
 import com.taras.nexusplay.app.mobile.feature.settings.SettingsManager
 import com.taras.nexusplay.common.graphics.GraphicsUtils
@@ -13,7 +14,6 @@ import com.taras.nexusplay.lib.saves.SaveState
 import com.taras.nexusplay.lib.saves.SavesManager
 import com.taras.nexusplay.lib.saves.StatesManager
 import com.taras.nexusplay.lib.saves.StatesPreviewManager
-import com.swordfish.libretrodroid.GLRetroView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext

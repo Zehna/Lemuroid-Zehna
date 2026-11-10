@@ -6,6 +6,12 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
+import com.swordfish.libretrodroid.GLRetroView
+import com.swordfish.libretrodroid.GLRetroViewData
+import com.swordfish.libretrodroid.ImmersiveMode
+import com.swordfish.libretrodroid.Variable
+import com.swordfish.libretrodroid.ViewportAlignment
+import com.swordfish.libretrodroid.VirtualFile
 import com.taras.nexusplay.BuildConfig
 import com.taras.nexusplay.R
 import com.taras.nexusplay.app.mobile.feature.settings.SettingsManager
@@ -24,12 +30,6 @@ import com.taras.nexusplay.lib.library.GameSystem
 import com.taras.nexusplay.lib.library.SystemCoreConfig
 import com.taras.nexusplay.lib.library.db.entity.Game
 import com.taras.nexusplay.lib.storage.RomFiles
-import com.swordfish.libretrodroid.GLRetroView
-import com.swordfish.libretrodroid.GLRetroViewData
-import com.swordfish.libretrodroid.ImmersiveMode
-import com.swordfish.libretrodroid.Variable
-import com.swordfish.libretrodroid.ViewportAlignment
-import com.swordfish.libretrodroid.VirtualFile
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview

@@ -11,6 +11,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.swordfish.libretrodroid.GLRetroView
 import com.taras.nexusplay.app.mobile.feature.game.GameService
 import com.taras.nexusplay.app.mobile.feature.settings.SettingsManager
 import com.taras.nexusplay.app.shared.game.viewmodel.GameViewModelInput
@@ -33,7 +34,6 @@ import com.taras.nexusplay.lib.library.db.entity.Game
 import com.taras.nexusplay.lib.saves.SavesManager
 import com.taras.nexusplay.lib.saves.StatesManager
 import com.taras.nexusplay.lib.saves.StatesPreviewManager
-import com.swordfish.libretrodroid.GLRetroView
 import com.taras.nexusplay.touchinput.radial.sensors.TiltConfiguration
 import com.taras.nexusplay.touchinput.radial.settings.TouchControllerSettingsManager
 import gg.padkit.inputevents.InputEvent

@@ -5,11 +5,11 @@ import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.view.InputDevice
+import com.swordfish.libretrodroid.RumbleEvent
 import com.taras.nexusplay.app.mobile.feature.settings.SettingsManager
 import com.taras.nexusplay.app.shared.input.InputDeviceManager
 import com.taras.nexusplay.common.coroutines.safeCollect
 import com.taras.nexusplay.lib.library.SystemCoreConfig
-import com.swordfish.libretrodroid.RumbleEvent
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
