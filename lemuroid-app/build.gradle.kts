@@ -10,9 +10,9 @@ plugins {
 
 android {
     defaultConfig {
-        versionCode = 252
+        versionCode = 253
         versionName = "1.17.0" // Always remember to update Cores Tag!
-        applicationId = "com.swordfish.lemuroid"
+        applicationId = "com.taras.nexusplay"
     }
     flavorDimensions += listOf("opensource", "cores")
 
@@ -84,10 +84,19 @@ android {
         }
 
         maybeCreate("release").apply {
-            storeFile = file("$rootDir/release.jks")
-            keyAlias = "lemuroid"
-            storePassword = "lemuroid"
-            keyPassword = "lemuroid"
+            storeFile =
+                file(
+                    System.getenv("NEXUSPLAY_KEYSTORE_FILE")
+                        ?: providers.gradleProperty("nexusplay.keystore.file").orNull
+                        ?: "$rootDir/release.jks",
+                )
+            keyAlias = System.getenv("NEXUSPLAY_KEY_ALIAS")
+                ?: providers.gradleProperty("nexusplay.key.alias").orNull
+                ?: "nexusplay"
+            storePassword = System.getenv("NEXUSPLAY_KEYSTORE_PASSWORD")
+                ?: providers.gradleProperty("nexusplay.keystore.password").orNull
+            keyPassword = System.getenv("NEXUSPLAY_KEY_PASSWORD")
+                ?: providers.gradleProperty("nexusplay.key.password").orNull
         }
     }
 
@@ -96,12 +105,12 @@ android {
             isMinifyEnabled = true
             signingConfig = signingConfigs["release"]
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-            resValue("string", "lemuroid_name", "Lemuroid")
+            resValue("string", "lemuroid_name", "NexusPlay")
         }
         getByName("debug") {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-DEBUG"
-            resValue("string", "lemuroid_name", "LemuroiDebug")
+            resValue("string", "lemuroid_name", "NexusPlay Debug")
         }
     }
 
@@ -121,7 +130,7 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    namespace = "com.swordfish.lemuroid"
+    namespace = "com.taras.nexusplay"
 }
 
 dependencies {

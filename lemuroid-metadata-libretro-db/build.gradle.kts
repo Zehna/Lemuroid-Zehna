@@ -22,5 +22,5 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    namespace = "com.swordfish.lemuroid.metadata.libretrodb"
+    namespace = "com.taras.nexusplay.metadata.libretrodb"
 }

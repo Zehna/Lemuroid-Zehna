@@ -15,7 +15,7 @@ android {
                 "-Xcontext-receivers",
             )
     }
-    namespace = "com.swordfish.touchinput.controller"
+    namespace = "com.taras.nexusplay.touchinput.controller"
 
     buildFeatures {
         compose = true

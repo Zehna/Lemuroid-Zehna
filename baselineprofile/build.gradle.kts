@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.swordfish.lemuroid.baselineprofile"
+    namespace = "com.taras.nexusplay.baselineprofile"
     compileSdk = deps.android.compileSdkVersion
 
     compileOptions {

@@ -61,7 +61,7 @@ android {
             }
         }
     }
-    namespace = "com.swordfish.lemuroid.lib"
+    namespace = "com.taras.nexusplay.lib"
     kotlinOptions {
         this as KotlinJvmOptions
         jvmTarget = "17"
