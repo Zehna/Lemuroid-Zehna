@@ -1,0 +1,63 @@
+name: Release NexusPlay APK
+
+# Rilis NexusPlay dari tag v* — SATU-SATUNYA jalur rilis APK fork ini.
+# APK debug/release fork berukuran ~212 MB, jadi TIDAK BISA dilampirkan
+# manual ke release (batas grant file browser & upload Muse). Workflow
+# ini membangun APK release bertanda tangan keystore rilis lalu
+# melampirkannya ke release GitHub secara otomatis.
+#
+# Prasyarat (sekali, di Settings > Secrets and variables > Actions):
+#   NEXUSPLAY_KEYSTORE_BASE64     <- isi nexusplay-release.keystore.b64
+#   NEXUSPLAY_KEYSTORE_PASSWORD   <- password keystore
+#   NEXUSPLAY_KEY_ALIAS           <- nexusplay
+#   NEXUSPLAY_KEY_PASSWORD        <- password key (sama dengan keystore)
+# Keystore + password tersimpan lokal di ~/workspace/nexusplay/
+# (nexusplay-release.keystore, .keystore-password.txt,
+# nexusplay-release.keystore.b64, README-SECRETS.md).
+# JANGAN commit keystore atau password ke repo.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Build Release APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: gradle
+
+      - name: Decode release keystore
+        run: echo "${{ secrets.NEXUSPLAY_KEYSTORE_BASE64 }}" | base64 --decode > release.jks
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Assemble Free Bundle Release APK
+        env:
+          NEXUSPLAY_KEYSTORE_FILE: ${{ github.workspace }}/release.jks
+          NEXUSPLAY_KEY_ALIAS: ${{ secrets.NEXUSPLAY_KEY_ALIAS }}
+          NEXUSPLAY_KEYSTORE_PASSWORD: ${{ secrets.NEXUSPLAY_KEYSTORE_PASSWORD }}
+          NEXUSPLAY_KEY_PASSWORD: ${{ secrets.NEXUSPLAY_KEY_PASSWORD }}
+        run: ./gradlew assembleFreeBundleRelease
+
+      - name: List APK outputs
+        run: find lemuroid-app/build/outputs/apk -name "*.apk" -exec ls -lh {} \;
+
+      - name: Create GitHub Release with APK
+        uses: softprops/action-gh-release@v2
+        with:
+          files: lemuroid-app/build/outputs/apk/freeBundle/release/*.apk
+          generate_release_notes: true
