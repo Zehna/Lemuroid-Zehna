@@ -75,11 +75,11 @@
 ## Kotlin serialization
 -keepattributes *Annotation*, InnerClasses
 -dontnote kotlinx.serialization.SerializationKt
--keep,includedescriptorclasses class com.swordfish.lemuroid.**$$serializer { *; }
--keepclassmembers class com.swordfish.lemuroid.** {
+-keep,includedescriptorclasses class com.taras.nexusplay.**$$serializer { *; }
+-keepclassmembers class com.taras.nexusplay.** {
     *** Companion;
 }
--keepclasseswithmembers class com.swordfish.lemuroid.** {
+-keepclasseswithmembers class com.taras.nexusplay.** {
     kotlinx.serialization.KSerializer serializer(...);
 }
 

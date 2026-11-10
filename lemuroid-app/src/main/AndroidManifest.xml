@@ -27,19 +27,19 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
     <application
-        android:name="com.swordfish.lemuroid.app.LemuroidApplication"
+        android:name="com.taras.nexusplay.app.NexusPlayApplication"
         android:allowBackup="true"
         android:banner="@mipmap/ic_banner"
-        android:icon="@mipmap/lemuroid_launcher"
+        android:icon="@mipmap/nexusplay_launcher"
         android:isGame="true"
         android:label="@string/lemuroid_name"
         android:networkSecurityConfig="@xml/network_security_config"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/lemuroid_launcher_round"
+        android:roundIcon="@mipmap/nexusplay_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/LemuroidMaterialTheme">
+        android:theme="@style/NexusPlayMaterialTheme">
         <activity
-            android:name="com.swordfish.lemuroid.app.mobile.feature.main.MainActivity"
+            android:name="com.taras.nexusplay.app.mobile.feature.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,10 +48,10 @@
         </activity>
 
         <activity
-            android:name="com.swordfish.lemuroid.app.shared.game.ExternalGameLauncherActivity"
+            android:name="com.taras.nexusplay.app.shared.game.ExternalGameLauncherActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|mnc|colorMode|density|fontScale|fontWeightAdjustment|keyboard|layoutDirection|locale|mcc|navigation|smallestScreenSize|touchscreen|uiMode"
             android:exported="true"
-            android:theme="@style/LemuroidMaterialTheme.Game">
+            android:theme="@style/NexusPlayMaterialTheme.Game">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -63,10 +63,10 @@
         </activity>
 
         <activity
-            android:name="com.swordfish.lemuroid.app.mobile.feature.game.GameActivity"
+            android:name="com.taras.nexusplay.app.mobile.feature.game.GameActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|mnc|colorMode|density|fontScale|fontWeightAdjustment|keyboard|layoutDirection|locale|mcc|navigation|smallestScreenSize|touchscreen|uiMode"
             android:process=":game"
-            android:theme="@style/LemuroidMaterialTheme.Game" />
+            android:theme="@style/NexusPlayMaterialTheme.Game" />
 
         <service
             android:name=".app.mobile.feature.game.GameService"
@@ -79,21 +79,21 @@
             tools:node="merge" />
 
         <activity
-            android:name="com.swordfish.lemuroid.app.mobile.feature.gamemenu.GameMenuActivity"
+            android:name="com.taras.nexusplay.app.mobile.feature.gamemenu.GameMenuActivity"
             android:process=":game"
-            android:theme="@style/LemuroidMaterialTheme.Menu" />
+            android:theme="@style/NexusPlayMaterialTheme.Menu" />
 
         <activity
-            android:name="com.swordfish.lemuroid.app.mobile.feature.input.GamePadBindingActivity"
-            android:theme="@style/LemuroidMaterialTheme.Invisible" />
+            android:name="com.taras.nexusplay.app.mobile.feature.input.GamePadBindingActivity"
+            android:theme="@style/NexusPlayMaterialTheme.Invisible" />
 
         <activity
-            android:name="com.swordfish.lemuroid.app.mobile.feature.input.GamePadShortcutBindingActivity"
-            android:theme="@style/LemuroidMaterialTheme.Invisible" />
+            android:name="com.taras.nexusplay.app.mobile.feature.input.GamePadShortcutBindingActivity"
+            android:theme="@style/NexusPlayMaterialTheme.Invisible" />
 
         <activity
-            android:name="com.swordfish.lemuroid.app.shared.settings.StorageFrameworkPickerLauncher"
-            android:theme="@style/LemuroidMaterialTheme.Invisible" />
+            android:name="com.taras.nexusplay.app.shared.settings.StorageFrameworkPickerLauncher"
+            android:theme="@style/NexusPlayMaterialTheme.Invisible" />
 
         <!-- Leanback activities -->
         <activity
@@ -131,7 +131,7 @@
             android:name=".app.tv.game.TVGameActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|mnc|colorMode|density|fontScale|fontWeightAdjustment|keyboard|layoutDirection|locale|mcc|navigation|smallestScreenSize|touchscreen|uiMode"
             android:process=":game"
-            android:theme="@style/LemuroidMaterialTheme.Game" />
+            android:theme="@style/NexusPlayMaterialTheme.Game" />
 
         <activity
             android:name=".app.tv.gamemenu.TVGameMenuActivity"
@@ -145,7 +145,7 @@
 
         <activity
             android:name=".app.shared.gamecrash.GameCrashActivity"
-            android:theme="@style/LemuroidMaterialTheme.Game" />
+            android:theme="@style/NexusPlayMaterialTheme.Game" />
 
         <receiver android:name=".app.shared.library.LibraryIndexBroadcastReceiver" />
         <receiver android:name=".app.shared.library.CoreUpdateBroadcastReceiver" />

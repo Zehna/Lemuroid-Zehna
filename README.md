@@ -1,15 +1,15 @@
-# Lemuroid
+# NexusPlay
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
      alt="Get it on F-Droid"
-     height="80">](https://f-droid.org/packages/com.swordfish.lemuroid/)
+     height="80">](https://f-droid.org/packages/com.taras.nexusplay/)
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
      alt="Get it on Google Play"
-     height="80">](https://play.google.com/store/apps/details?id=com.swordfish.lemuroid)
+     height="80">](https://play.google.com/store/apps/details?id=com.taras.nexusplay)
 
 ## Description
 
-Lemuroid is an open-source emulation project for Android based on Libretro. Its main goal is ease of use, good Android integration and a great user experience.
+NexusPlay is an open-source Android emulation project based on Libretro. It is a fork of [Swordfish90/Lemuroid](https://github.com/Swordfish90/Lemuroid), retaining its GPLv3 license.
 
 It originated from a rib of [Retrograde](https://github.com/retrograde/retrograde-android), but graduated to a standalone project integrating [LibretroDroid](https://github.com/Swordfish90/LibretroDroid).
 

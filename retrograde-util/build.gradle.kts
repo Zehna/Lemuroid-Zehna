@@ -9,7 +9,7 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    namespace = "com.swordfish.lemuroid.common"
+    namespace = "com.taras.nexusplay.common"
 
     buildFeatures {
         compose = true
