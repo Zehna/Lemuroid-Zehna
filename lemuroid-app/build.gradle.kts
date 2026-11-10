@@ -84,11 +84,12 @@ android {
         }
 
         maybeCreate("release").apply {
-            storeFile = file(
-                System.getenv("NEXUSPLAY_KEYSTORE_FILE")
-                    ?: providers.gradleProperty("nexusplay.keystore.file").orNull
-                    ?: "$rootDir/release.jks",
-            )
+            storeFile =
+                file(
+                    System.getenv("NEXUSPLAY_KEYSTORE_FILE")
+                        ?: providers.gradleProperty("nexusplay.keystore.file").orNull
+                        ?: "$rootDir/release.jks",
+                )
             keyAlias = System.getenv("NEXUSPLAY_KEY_ALIAS")
                 ?: providers.gradleProperty("nexusplay.key.alias").orNull
                 ?: "nexusplay"
